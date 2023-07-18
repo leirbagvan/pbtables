@@ -360,8 +360,9 @@ ln_genter =  CREATE n_cst_genter
 TRY
 	//Elimino un registro
 	ln_genter.of_Delete(ls_empresa, ls_tipoter, ls_codigo)
-
+	COMMIT;
 CATCH(exception ex)
+	ROLLBACK;
 	messagebox("Error", ex.GetMessage())
 END TRY
 
@@ -408,8 +409,9 @@ TRY
 	lstr_genter.nombre= "Prueba"
 	
 	ln_genter.of_update(lstr_genter)
-
+	COMMIT;
 CATCH(exception ex)
+	ROLLBACK;
 	messagebox("Error", ex.GetMessage())
 END TRY
 
@@ -465,8 +467,9 @@ TRY
 	lstr_genter.nombre= "Prueba"
 	
 	ln_genter.of_insert(lstr_genter)
-
+	COMMIT;
 CATCH(exception ex)
+	ROLLBACK;
 	messagebox("Error", ex.GetMessage())
 END TRY
 
