@@ -3,6 +3,6 @@ Save Format v3.0(19990112)
  0 "table_to_object.pbt";
  1 "demo.pbt";
 @end;
-DefaultTarget "demo.pbt";
+DefaultTarget "table_to_object.pbt";
 DefaultExportEncode "UTF-8";
-DefaultRemoteTarget "demo.pbt";
+DefaultRemoteTarget "table_to_object.pbt";

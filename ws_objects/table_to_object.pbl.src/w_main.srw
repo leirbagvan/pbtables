@@ -766,6 +766,8 @@ ls_export_txt += "public function"+ls_space+"long of_getitemnumber "+gf_replacea
 
 ls_export_txt +="Long ll_fieldValue"+ls_return
 ls_export_txt += ls_return
+ls_export_txt += "SetNull(ll_fieldValue)"
+ls_export_txt += ls_return
 ls_export_txt +="// Crear una sentencia SELECT Dinamica"+ls_return
 ls_export_txt +="String ls_sql"+ls_return+ls_return
 
@@ -835,6 +837,8 @@ ls_export_txt += "end function"+ls_return+ls_return
 ls_export_txt += "public function"+ls_space+"string of_getitemstring "+gf_replaceall(ls_Argumentos_con, "(", "(string as_column, ")+";"
 ls_export_txt +="String ls_fieldValue"+ls_return
 ls_export_txt += ls_return
+ls_export_txt += "SetNull(ls_fieldValue)"
+ls_export_txt += ls_return
 ls_export_txt +="// Crear una sentencia SELECT Dinamica"+ls_return
 ls_export_txt +="String ls_sql"+ls_return+ls_return
 ls_export_txt +="ls_sql = "+char(34)+"SELECT "+is_table+"."+char(34)+"+as_column+"+char(34)+" FROM "+is_table+ls_where+char(34)+ls_return
@@ -857,6 +861,8 @@ ls_export_txt += "end function"+ls_return+ls_return
 ls_export_txt += "public function"+ls_space+"datetime of_getitemdatetime "+gf_replaceall(ls_Argumentos_con, "(", "(string as_column, ")+";"
 ls_export_txt +="Datetime ldt_fieldValue"+ls_return
 ls_export_txt += ls_return
+ls_export_txt += "SetNull(ldt_fieldValue)"
+ls_export_txt += ls_return
 ls_export_txt +="// Crear una sentencia SELECT Dinamica"+ls_return
 ls_export_txt +="String ls_sql"+ls_return+ls_return
 ls_export_txt +="ls_sql = "+char(34)+"SELECT "+is_table+"."+char(34)+"+as_column+"+char(34)+" FROM "+is_table+ls_where+char(34)+ls_return
@@ -877,6 +883,8 @@ ls_export_txt += "end function"+ls_return+ls_return
 //function of_getitemdecimal ------------------------------------------------------------------------
 ls_export_txt += "public function"+ls_space+"decimal of_getitemdecimal "+gf_replaceall(ls_Argumentos_con, "(", "(string as_column, ")+";"
 ls_export_txt +="Decimal ld_fieldValue"+ls_return
+ls_export_txt += ls_return
+ls_export_txt += "SetNull(ld_fieldValue)"
 ls_export_txt += ls_return
 ls_export_txt +="// Crear una sentencia SELECT Dinamica"+ls_return
 ls_export_txt +="String ls_sql"+ls_return+ls_return
@@ -912,7 +920,7 @@ ls_export_txt += "return lu_exception"+ls_return
 ls_export_txt += "end function"+ls_return+ls_return
 //---------------------------------------------------------------------end function of_get_exception
 
-// constructor event
+// create event
 ls_export_txt += ls_return
 ls_export_txt += "on "+is_prefix+is_export_name+".create"+ls_return
 ls_export_txt += "call super::create"+ls_return
